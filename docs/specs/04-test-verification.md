@@ -70,7 +70,7 @@ interface TestFramework {
 
 **Vitest:**
 ```bash
-bun run test --reporter=json --outputFile=test-results.json
+bun --bun run test --reporter=json --outputFile=test-results.json
 ```
 
 **Jest:**
@@ -370,7 +370,7 @@ export const TestRunnerService = Effect.gen(function* () {
         const pkg = JSON.parse(pkgJson)
 
         if (pkg.scripts?.test?.includes('vitest')) {
-          return { type: 'vitest', command: 'bun run test' }
+          return { type: 'vitest', command: 'bun --bun run test' }
         }
         if (pkg.scripts?.test?.includes('jest')) {
           return { type: 'jest', command: 'npm test' }

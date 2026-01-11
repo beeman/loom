@@ -132,7 +132,7 @@ jobs:
         uses: ./.github/workflows/actions/install-dependencies
 
       - name: Test
-        run: bun run test
+        run: bun --bun run test
 
   test-e2e:
     timeout-minutes: 60
@@ -148,7 +148,7 @@ jobs:
         run: bunx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: bun run test:e2e
+        run: bun --bun run test:e2e
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: ${{ !cancelled() }}
@@ -173,4 +173,4 @@ jobs:
           bunx wait-on tcp:localhost:8900 --verbose --timeout 10000
 
       - name: Test Integration
-        run: bun run test:integration
+        run: bun --bun run test:integration

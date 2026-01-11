@@ -1,0 +1,171 @@
+{
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  },
+  "dialect": "sqlite",
+  "enums": {},
+  "id": "01894168-ef44-42fb-92c1-328eff8a996b",
+  "internal": {
+    "indexes": {}
+  },
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "task_logs": {
+      "checkConstraints": {},
+      "columns": {
+        "created_at": {
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP)",
+          "name": "created_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "notNull": true,
+          "primaryKey": true,
+          "type": "integer"
+        },
+        "level": {
+          "autoincrement": false,
+          "default": "'info'",
+          "name": "level",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "message": {
+          "autoincrement": false,
+          "name": "message",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "metadata": {
+          "autoincrement": false,
+          "name": "metadata",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "task_id": {
+          "autoincrement": false,
+          "name": "task_id",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "integer"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "foreignKeys": {
+        "task_logs_task_id_tasks_id_fk": {
+          "columnsFrom": ["task_id"],
+          "columnsTo": ["id"],
+          "name": "task_logs_task_id_tasks_id_fk",
+          "onDelete": "cascade",
+          "onUpdate": "no action",
+          "tableFrom": "task_logs",
+          "tableTo": "tasks"
+        }
+      },
+      "indexes": {
+        "task_logs_created_at_idx": {
+          "columns": ["created_at"],
+          "isUnique": false,
+          "name": "task_logs_created_at_idx"
+        },
+        "task_logs_task_id_idx": {
+          "columns": ["task_id"],
+          "isUnique": false,
+          "name": "task_logs_task_id_idx"
+        }
+      },
+      "name": "task_logs",
+      "uniqueConstraints": {}
+    },
+    "tasks": {
+      "checkConstraints": {},
+      "columns": {
+        "created_at": {
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP)",
+          "name": "created_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "description": {
+          "autoincrement": false,
+          "name": "description",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "github_issue_id": {
+          "autoincrement": false,
+          "name": "github_issue_id",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "integer"
+        },
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "notNull": true,
+          "primaryKey": true,
+          "type": "integer"
+        },
+        "status": {
+          "autoincrement": false,
+          "default": "'todo'",
+          "name": "status",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "title": {
+          "autoincrement": false,
+          "name": "title",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "updated_at": {
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP)",
+          "name": "updated_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "foreignKeys": {},
+      "indexes": {
+        "tasks_created_at_idx": {
+          "columns": ["created_at"],
+          "isUnique": false,
+          "name": "tasks_created_at_idx"
+        },
+        "tasks_github_issue_id_idx": {
+          "columns": ["github_issue_id"],
+          "isUnique": false,
+          "name": "tasks_github_issue_id_idx"
+        },
+        "tasks_status_idx": {
+          "columns": ["status"],
+          "isUnique": false,
+          "name": "tasks_status_idx"
+        }
+      },
+      "name": "tasks",
+      "uniqueConstraints": {}
+    }
+  },
+  "version": "6",
+  "views": {}
+}

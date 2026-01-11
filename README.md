@@ -1,3 +1,4 @@
+
 # Loom
 
 An autonomous development engine that weaves GitHub issues into production-ready code via AI agents.
@@ -94,6 +95,37 @@ bun lint:fix
 # Type check
 bun check-types
 ```
+
+## Database Development
+
+### Available Scripts
+
+The `@workspace/db` package provides database management and Drizzle schema handling:
+
+#### Schema Management
+- `bun run db:generate` - Generate SQL migrations from Drizzle schema
+- `bun run db:migrate` - Apply pending migrations to database
+- `bun run db:push` - Push schema changes directly to database (MVP approach)
+
+#### Inspection & Development
+- `bun run db:studio` - Launch Drizzle Studio for visual schema inspection
+
+### Workflow
+
+1. **Development**: Make schema changes in `packages/db/src/schema.ts`
+2. **Generate**: Run `bun run db:generate` to create migration files
+3. **Apply**: Run `bun run db:migrate` to update database structure
+4. **Push Changes**: Run `bun run db:push` to apply schema directly to database (MVP approach)
+
+### Configuration
+
+Database connection is controlled via `DATABASE_URL` environment variable:
+- Default: `:memory:` (in-memory for tests)
+- Production: Set `DATABASE_URL=file:./data.db` for persistent storage
+
+### Notes
+
+For MVP, we use `db:push` instead of migrations for faster iteration. Use `db:studio` to visually inspect the database schema and relationships.
 
 ## Contributing
 

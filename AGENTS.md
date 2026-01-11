@@ -5,8 +5,8 @@
 - **Build**: `bun run build`
 - **Lint**: `bun lint` / `bun lint:fix`
 - **Type Check**: `bun check-types`
-- **Test All**: `bun run test` / `bun run test:watch`
-- **Single Test**: `bun run test <path/to/test.ts>`
+- **Test All**: `bun --bun run test` / `bun --bun run test:watch`
+- **Single Test**: `bun --bun run test <path/to/test.ts>`
 - **Format**: `bun format` / `bun format:check`
 
 ## Code Style
