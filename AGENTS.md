@@ -104,3 +104,15 @@ it('should throw an error with an invalid key', async () => {
 3. **Console Mocking**: Unexpected behavior tests must mock console.log to avoid noise
 4. **Type Errors**: Use `// @ts-expect-error: Testing invalid input` for intentional type violations
 5. **Clear Descriptions**: Test descriptions should clearly state what is being tested and under what conditions
+
+## Workflow
+
+1. **Branching**: Always create a branch for new features/fixes. Format: `beeman/some-feature-name`.
+2. **Iteration**: Iterate on the code, running tests and linting.
+3. **Commit Strategy**:
+  - Before any commit, **ALWAYS** ask the user for the preferred action:
+    - `Commit`: Create a new commit with a meaningful message.
+    - `Amend`: Amend the previous commit (useful for fix-ups).
+    - `Skip`: Do not commit changes yet.
+  - Do not assume permission to commit without this check.
+4. **Push**: Push changes to the remote branch after committing/amending.
