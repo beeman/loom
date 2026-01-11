@@ -1,4 +1,8 @@
 {
+  "devDependencies": {
+    "@effect/language-service": "catalog:",
+    "typescript": "catalog:"
+  },
   "license": "MIT",
   "name": "@workspace/config-typescript",
   "private": true,

@@ -35,5 +35,10 @@
     "useDefineForClassFields": true,
     "verbatimModuleSyntax": true
   },
-  "display": "Default"
+  "display": "Default",
+  "plugins": [
+    {
+      "name": "@effect/language-service"
+    }
+  ]
 }
