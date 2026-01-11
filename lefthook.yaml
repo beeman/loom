@@ -1,0 +1,27 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: syncpack
+      run: bun syncpack lint
+      glob: "package.json"
+
+    - name: editorconfig checker
+      run: bun ec
+      glob: "*"
+
+    - name: lint
+      run: bun lint
+      glob: "*"
+
+    - name: cspell
+      run: bun spell-check
+      glob: "*"
+
+commit-msg:
+  parallel: true
+  commands:
+    commitlint:
+      run: bun commitlint --edit {1}
+
+    spell-check:
+      run: bun spell-check --no-summary {1}

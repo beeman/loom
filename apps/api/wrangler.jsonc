@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "compatibility_date": "2025-10-24",
+  "main": "src/index.ts",
+  "name": "my-app-api",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "preview_urls": true,
+  "routes": [
+    {
+      "custom_domain": true,
+      "pattern": "api.example.com"
+    }
+  ],
+  "send_metrics": false,
+  "vars": {
+    "CORS_ORIGINS": "https://app.example.com"
+  }
+}

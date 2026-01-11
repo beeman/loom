@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "extends": "@workspace/config-typescript/base.json",
+  "files": ["locales/en/translation.json", "locales/en/ui.json", "locales/es/translation.json", "locales/es/ui.json"]
+}

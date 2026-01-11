@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "@effect/platform": "0.93.8",
+    "effect": "catalog:"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20251223.0",
+    "@types/bun": "catalog:",
+    "@workspace/config-typescript": "workspace:*",
+    "tsx": "4.20.6",
+    "typescript": "catalog:",
+    "wrangler": "4.51.0"
+  },
+  "name": "api",
+  "private": true,
+  "scripts": {
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "check-types": "tsc --noEmit",
+    "deploy": "wrangler deploy --minify",
+    "dev": "wrangler dev",
+    "postinstall": "[ -f .env.example ] && [ ! -f .env ] && cp -v .env.example .env || true; bun run cf-typegen"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
