@@ -10,7 +10,7 @@
     "MaxLineLength": true,
     "TrimTrailingWhitespace": false
   },
-  "Exclude": ["bun.lock", "\\.sql$"],
+  "Exclude": ["bun.lock", "\\.sql$", "^docs/.*\\.md$"],
   "Format": "",
   "IgnoreDefaults": false,
   "NoColor": false,
