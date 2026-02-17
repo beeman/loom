@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@workspace/db": "workspace:*",
+    "@workspace/engine": "workspace:*",
+    "@workspace/github": "workspace:*",
+    "drizzle-orm": "0.45.1"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@workspace/config-typescript": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "license": "MIT",
+  "name": "engine",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}

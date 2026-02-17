@@ -44,6 +44,7 @@ const config: CSpellSettings = {
     'hmac',
     'loom',
     'nums',
+    'opencode',
     'pyproject',
     'pytest',
     'retryable',
